@@ -10,5 +10,20 @@ function counting(arr, k){
     return counter;
 }
 
-console.log(counting([1, 3, 11, 14, 17, 21, 34, 50], 10))
+const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
+let input = [];
+readline.on('line', (line) => {
+    input.push(line);
+    if (input.length === 2) {
+        readline.close();
+    }
+}).on('close', () => {
+    const [n, k] = input[0].split(' ').map(Number);
+    const arr = input[1].split(' ').map(Number).slice(0, n);
+    const result = counting(arr, k); 
+    console.log(result); 
+});
