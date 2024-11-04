@@ -9,6 +9,8 @@ def x(nums):
 def rsq(prefixsum, l, r):
     return prefixsum[r] - prefixsum[l]
 
+
+
 # массив с подсчётом нулей в массиве
 def makeprefixzeroes(nums):
     prefixzeroes = [0]*(len(nums) + 1)
